@@ -10,6 +10,17 @@ public class Hamburger extends Product {
     private Side side;
     private Drink drink;
 
+    public Hamburger(int id, String name, int price, int kcal, boolean isBurgerSet, int burgerSetPrice) {
+        super(id, name, price, kcal);
+        this.isBurgerSet = isBurgerSet;
+        this.burgerSetPrice = burgerSetPrice;
+    }
+
+    public Hamburger(Hamburger hamburger) {
+        this(hamburger.getId(), hamburger.getName(), hamburger.getPrice(),
+                hamburger.getKcal(), hamburger.isBurgerSet, hamburger.burgerSetPrice);
+    }
+
     public boolean isBurgerSet() {
         return isBurgerSet;
     }
@@ -24,12 +35,6 @@ public class Hamburger extends Product {
 
     public void setDrink(Drink drink) {
         this.drink = drink;
-    }
-
-    public Hamburger(int id, String name, int price, int kcal, boolean isBurgerSet, int burgerSetPrice) {
-        super(id, name, price, kcal);
-        this.isBurgerSet = isBurgerSet;
-        this.burgerSetPrice = burgerSetPrice;
     }
 
     public void printProductDetails() {

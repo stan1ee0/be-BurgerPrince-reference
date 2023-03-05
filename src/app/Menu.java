@@ -12,7 +12,7 @@ public class Menu {
         this.products = products;
     }
 
-    public void printMenu() {
+    void printMenu() {
         System.out.println("[🔻] 메뉴");
         System.out.println("-".repeat(60));
 

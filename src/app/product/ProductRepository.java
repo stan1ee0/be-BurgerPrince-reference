@@ -18,9 +18,17 @@ public class ProductRepository {
         return products;
     }
 
-    public static Product findById(int id) {
-        if (1 <= id && id <= products.length) {
-            return products[id-1];
+    public static Product produceById(int id) {
+        Product product = products[id-1];
+
+        if (product instanceof Hamburger) {
+            return new Hamburger((Hamburger) product);
+        }
+        if (product instanceof Side) {
+            return new Side((Side) product);
+        }
+        if (product instanceof Drink) {
+            return new Drink((Drink) product);
         }
         return null;
     }

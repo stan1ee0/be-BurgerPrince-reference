@@ -7,13 +7,17 @@ import java.util.Scanner;
 public class Drink extends Product {
     private boolean hasStraw;
 
-    public boolean hasStraw() {
-        return hasStraw;
-    }
-
     public Drink(int id, String name, int price, int kcal, boolean hasStraw) {
         super(id, name, price, kcal);
         this.hasStraw = hasStraw;
+    }
+
+    public Drink(Drink drink) {
+        this(drink.getId(), drink.getName(), drink.getPrice(), drink.getKcal(), drink.hasStraw);
+    }
+
+    public boolean hasStraw() {
+        return hasStraw;
     }
 
     public void printProductDetails() {

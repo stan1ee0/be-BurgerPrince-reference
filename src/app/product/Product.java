@@ -3,8 +3,19 @@ package app.product;
 public abstract class Product {
     private int id;
     protected String name;
-    private int kcal;
     protected int price;
+    private int kcal;
+
+    public Product(int id, String name, int price, int kcal) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.kcal = kcal;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -12,14 +23,6 @@ public abstract class Product {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getKcal() {
-        return kcal;
-    }
-
-    public void setKcal(int kcal) {
-        this.kcal = kcal;
     }
 
     public int getPrice() {
@@ -30,10 +33,11 @@ public abstract class Product {
         this.price = price;
     }
 
-    public Product(int id, String name, int price, int kcal) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
+    public int getKcal() {
+        return kcal;
+    }
+
+    public void setKcal(int kcal) {
         this.kcal = kcal;
     }
 

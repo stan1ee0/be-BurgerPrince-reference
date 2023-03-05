@@ -1,13 +1,11 @@
 package app;
 
-import app.product.ProductRepository;
-
 public class Main {
     public static void main(String[] args) {
-        Menu menu = new Menu(ProductRepository.getAllProducts());
-        Cart cart = new Cart();
+        AppConfigurer appConfigurer = new AppConfigurer();
 
-        OrderApp app = new OrderApp(menu, cart);
+        OrderApp app = new OrderApp(appConfigurer.menu(),
+                appConfigurer.cart(), appConfigurer.order());
         app.start();
     }
 }

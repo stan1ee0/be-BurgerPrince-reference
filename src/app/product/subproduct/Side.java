@@ -7,13 +7,17 @@ import java.util.Scanner;
 public class Side extends Product {
     private int ketchup;
 
-    public int getKetchup() {
-        return ketchup;
-    }
-
     public Side(int id, String name, int price, int kcal, int ketchup) {
         super(id, name, price, kcal);
         this.ketchup = ketchup;
+    }
+
+    public Side(Side side) {
+        this(side.getId(), side.getName(), side.getPrice(), side.getKcal(), side.ketchup);
+    }
+
+    public int getKetchup() {
+        return ketchup;
     }
 
     public void printProductDetails() {
