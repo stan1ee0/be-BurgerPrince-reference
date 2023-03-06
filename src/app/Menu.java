@@ -16,9 +16,9 @@ public class Menu {
         System.out.println("[🔻] 메뉴");
         System.out.println("-".repeat(60));
 
-        printHamburgers();
-        printSides();
-        printDrinks();
+        printHamburgers(true);
+        printSides(true);
+        printDrinks(true);
 
         System.out.println();
         System.out.println("🧺 (0) 장바구니");
@@ -27,31 +27,31 @@ public class Menu {
         System.out.print("[📣] 메뉴를 선택해주세요 : ");
     }
 
-    private void printHamburgers() {
+    private void printHamburgers(boolean printPrice) {
         System.out.println("🍔 햄버거");
         for (Product product : products) {
             if (product instanceof Hamburger) {
-                product.printProduct();
+                product.printProduct(printPrice);
             }
         }
         System.out.println();
     }
 
-    void printSides() {
+    void printSides(boolean printPrice) {
         System.out.println("🍟 사이드");
         for (Product product : products) {
             if (product instanceof Side) {
-                product.printProduct();
+                product.printProduct(printPrice);
             }
         }
         System.out.println();
     }
 
-    void printDrinks() {
+    void printDrinks(boolean printPrice) {
         System.out.println("🥤 음료");
         for (Product product : products) {
             if (product instanceof Drink) {
-                product.printProduct();
+                product.printProduct(printPrice);
             }
         }
         System.out.println();

@@ -19,7 +19,6 @@ public class OrderApp {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("🍔 BurgerPrince Order Service");
-
         while (true) {
             menu.printMenu();
             String input = scanner.nextLine();
@@ -34,9 +33,8 @@ public class OrderApp {
             else {
                 int productId = Integer.parseInt(input);
                 if (1 <= productId &&
-                        productId <= ProductRepository.getAllProducts().length) {
+                        productId <= ProductRepository.getAllProducts().length)
                     cart.addToCart(productId);
-                }
             }
         }
     }

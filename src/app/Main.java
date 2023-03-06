@@ -4,8 +4,12 @@ public class Main {
     public static void main(String[] args) {
         AppConfigurer appConfigurer = new AppConfigurer();
 
-        OrderApp app = new OrderApp(appConfigurer.menu(),
-                appConfigurer.cart(), appConfigurer.order());
-        app.start();
+        OrderApp orderApp = new OrderApp(
+                appConfigurer.menu(),
+                appConfigurer.cart(),
+                appConfigurer.order()
+        );
+
+        orderApp.start();
     }
 }

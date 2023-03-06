@@ -11,7 +11,6 @@ import java.util.Scanner;
 
 public class Cart {
     private Product[] items = new Product[0];
-
     private Menu menu;
 
     public Cart(Menu menu) {
@@ -66,7 +65,7 @@ public class Cart {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("사이드를 골라주세요");
-        menu.printSides();
+        menu.printSides(false);
 
         String sideId = scanner.nextLine();
         Side side = (Side) ProductRepository.produceById(Integer.parseInt(sideId));
@@ -74,7 +73,7 @@ public class Cart {
         hamburger.setSide(side);
 
         System.out.println("음료를 골라주세요.");
-        menu.printDrinks();
+        menu.printDrinks(false);
 
         String drinkId = scanner.nextLine();
         Drink drink = (Drink) ProductRepository.produceById(Integer.parseInt(drinkId));

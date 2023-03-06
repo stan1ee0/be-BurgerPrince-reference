@@ -41,8 +41,9 @@ public abstract class Product {
         this.kcal = kcal;
     }
 
-    public void printProduct() {
-        System.out.printf("   (%d) %s %5dKcal %5d원\n", id, name, kcal, price);
+    public void printProduct(boolean printPrice) {
+        if (printPrice) System.out.printf("   (%d) %s %5dKcal %5d원\n", id, name, kcal, price);
+        else System.out.printf("   (%d) %s %5dKcal\n", id, name, kcal);
     }
 
     public abstract void printProductDetails();
